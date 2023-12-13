@@ -52,6 +52,6 @@ POST /v1/auth/register
 
 ### POST MAN COLLECTION
 
-[POSTMAN COLLECTION FILE](https://github.com/zohaibtariq/crystal-system/blob/development/postman/Crystal-Systems.postman_collection.json)
+[POSTMAN COLLECTION FILE](https://github.com/zohaibtariq/crystal-system/blob/main/postman/Crystal-Systems.postman_collection.json)
 
-[POSTMAN ENVIRONMENT FILE](https://github.com/zohaibtariq/crystal-system/blob/development/postman/Crystal-Systems_ENV.postman_environment.json)
+[POSTMAN ENVIRONMENT FILE](https://github.com/zohaibtariq/crystal-system/blob/main/postman/Crystal-Systems_ENV.postman_environment.json)
