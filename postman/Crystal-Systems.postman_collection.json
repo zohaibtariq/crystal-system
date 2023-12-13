@@ -1,0 +1,1563 @@
+{
+	"info": {
+		"_postman_id": "2781e80d-2c88-44eb-810a-9862e6b25b0c",
+		"name": "Crystal Systems",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7973098",
+		"_collection_link": "https://restless-crescent-348583.postman.co/workspace/Awais-Alliance-Drive-Way-Work-S~318e1f44-d844-48ed-ae2a-fabcf3198efb/collection/7973098-2781e80d-2c88-44eb-810a-9862e6b25b0c?action=share&source=collection_link&creator=7973098"
+	},
+	"item": [
+		{
+			"name": "v1",
+			"item": [
+				{
+					"name": "Admin API'S",
+					"item": [
+						{
+							"name": "drivers",
+							"item": [
+								{
+									"name": "com data",
+									"item": [
+										{
+											"name": "load money",
+											"protocolProfileBehavior": {
+												"disabledSystemHeaders": {
+													"content-type": true
+												}
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "text/xml;charset=UTF-8",
+														"type": "text"
+													},
+													{
+														"key": "SOAPAction",
+														"value": "\"loadMoney\"",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "<soapenv:Envelope xmlns:cow=\"http://cows0103.comdata.com\" xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\"> \n   <soapenv:Header>\n      <wsse:Security soapenv:mustUnderstand=\"1\" xmlns:wsse=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd\" xmlns:wsu=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\">\n         <wsse:UsernameToken wsu:Id=\"UsernameToken-F61AC553FBC8A36DE7167569793261813\">\n            <wsse:Username>extbn444uat</wsse:Username>\n            <wsse:Password Type=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText\">Tn38Hw67</wsse:Password>\n            <wsse:Nonce EncodingType=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary\">KJFQ6RkObp+SCBMYwydT8Q==</wsse:Nonce>\n            <wsu:Created>2023-02-06T15:38:52.618Z</wsu:Created>\n         </wsse:UsernameToken>\n      </wsse:Security>\n   </soapenv:Header>\n   <soapenv:Body>\n      <cow:loadMoney>\n         <loadRequest>\n            <!--type: dateTime-->\n            <availableDateTime>2023-02-13T00:00:00</availableDateTime>             \n            <!--type: string-->\n            <accountCode>BN444</accountCode>\n            <!--type: string-->\n           <cardNumber>1619566120</cardNumber>                                               \n            <!--type: string-->\n            <customerId>12666</customerId>\n            <!--type: string-->\n            <discretionaryData>?</discretionaryData>\n            <!--type: string-->\n            <miscellaneousData>?</miscellaneousData>\n            <!--type: string-->\n            <password>BN444</password>\n            <!--type: string-->\n            <securityInfo>5600171620474587</securityInfo>\n            <!--type: string-->\n            <signOnName>BN444</signOnName>\n            <!--type: string-->\n            <tripNumber>?</tripNumber>\n            <!--type: string-->\n            <addSubtractFlag>?</addSubtractFlag>\n            <!--type: string-->\n            <plusLessFlag>1</plusLessFlag>\n            <!--type: long-->\n            <trackingNumber>4</trackingNumber>\n            <!--type: double-->\n            <loadAmount>10.99</loadAmount>\n            <!--type: boolean-->\n            <directDeposit>0</directDeposit>\n         </loadRequest>\n      </cow:loadMoney>\n   </soapenv:Body>\n</soapenv:Envelope>",
+													"options": {
+														"raw": {
+															"language": "xml"
+														}
+													}
+												},
+												"url": {
+													"raw": "https://w8cert.iconnectdata.com:443/cows/services/RealTimeOnline0103",
+													"protocol": "https",
+													"host": [
+														"w8cert",
+														"iconnectdata",
+														"com"
+													],
+													"port": "443",
+													"path": [
+														"cows",
+														"services",
+														"RealTimeOnline0103"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "Create Drivers",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n   \"ratePerMile\":\"5.00\",\r\n   \"active\":true,\r\n   \"first_name\":\"Test Driver\",\r\n   \"last_name\":\"Test Driver\",\r\n   \"gender\":\"male\",\r\n   \"address\":\"sadasd\",\r\n   \"zip\":\"234234\",\r\n   \"state\":\"6312bf0408b68009f5b7a384\",\r\n   \"city\":\"6312bf0608b68009f5b7d456\",\r\n   \"country\":\"6312bf0308b68009f5b79f12\",\r\n   \"phone\":\"(234) 2342-3432\",\r\n   \"mobile\":\"(234) 2342-3423\",\r\n   \"ssn\":\"234234\",\r\n   \"tax_id\":\"23423423e2343\",\r\n   \"external_id\":\"23432\",\r\n   \"dispatcher\":\"63128ed292e15b91c56daddf\",\r\n    \"email\": \"johnthedriver@gmail.com\",\r\n    \"password\": \"pass@123\",\r\n   \"cardNumber\":\"1619566120\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}drivers/create",
+											"host": [
+												"{{url}}drivers"
+											],
+											"path": [
+												"create"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Drivers",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}drivers",
+											"host": [
+												"{{url}}drivers"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "1",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Driver",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}drivers/646f5b23a8f6e802e8e48807",
+											"host": [
+												"{{url}}drivers"
+											],
+											"path": [
+												"646f5b23a8f6e802e8e48807"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Update Driver",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n   \"ratePerMile\":1,\n   \"active\":true,\n   \"first_name\":\"good1\",\n   \"last_name\":\"driver1\",\n   \"gender\":\"male\",\n   \"address\":\"good addr\",\n   \"zip\":\"75501\",\n   \"state\":\"62f1899872390b778c94b09e\",\n   \"city\":\"62f1899a72390b778c94c20b\",\n   \"country\":\"62f1899772390b778c94a64e\",\n   \"phone\":\"(111) 1111-1111\",\n   \"mobile\":\"(444) 4444-4444\",\n   \"ssn\":\"\",\n   \"tax_id\":\"\",\n   \"external_id\":\"\",\n   \"dispatcher\":\"62f1913372390b778c96fd54\",\n   \"email\":\"meshalkhan@mailinator.com\",\n   \"image\":\"\",\n   \"certifications\":[\n   ],\n   \"cardNumber\": \"1619566120\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}drivers/646f5b23a8f6e802e8e48807",
+											"host": [
+												"{{url}}drivers"
+											],
+											"path": [
+												"646f5b23a8f6e802e8e48807"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Upload Driver Photo",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "file",
+													"type": "file",
+													"src": "/C:/Users/zohaib/Desktop/a - Copy.jpg"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}drivers/625ddc9b6c18ec27786c7368/upload",
+											"host": [
+												"{{url}}drivers"
+											],
+											"path": [
+												"625ddc9b6c18ec27786c7368",
+												"upload"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete Driver",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{url}}drivers/62630a628f37b229a8e5e9f4",
+											"host": [
+												"{{url}}drivers"
+											],
+											"path": [
+												"62630a628f37b229a8e5e9f4"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Import Drivers",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "[\r\n  {\r\n    \"email\": \"ddd@ddd.ddd\",\r\n    \"code\": \"COD\",\r\n    \"active\": true,\r\n    \"first_name\": \"ZD\",\r\n    \"last_name\": \"TB\",\r\n    \"gender\": \"male\",\r\n    \"address\": \"karachi pakistan\",\r\n    \"zip\": \"75850\",\r\n    \"state\": \"uk\",\r\n    \"city\": \"karachi\",\r\n    \"country\": \"united kingdom\",\r\n    \"phone\": \"(940) 8720-7900\",\r\n    \"mobile\": \"(940) 8720-7900\",\r\n    \"ssn\": \"SSD\",\r\n    \"tax_id\": \"taxd\",\r\n    \"external_id\": \"EXTD\"\r\n  },\r\n  {\r\n    \"email\": \"bbb@bbb.bbb\",\r\n    \"code\": \"COB\",\r\n    \"active\": true,\r\n    \"first_name\": \"ZB\",\r\n    \"last_name\": \"TB\",\r\n    \"gender\": \"male\",\r\n    \"address\": \"karachi pakistan\",\r\n    \"zip\": \"75850\",\r\n    \"state\": \"uk\",\r\n    \"city\": \"karachi\",\r\n    \"country\": \"united kingdom\",\r\n    \"phone\": \"(940) 8720-7900\",\r\n    \"mobile\": \"(940) 8720-7900\",\r\n    \"ssn\": \"SB\",\r\n    \"tax_id\": \"taxb\",\r\n    \"external_id\": \"EXTB\"\r\n  }\r\n]",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}drivers/import/drivers",
+											"host": [
+												"{{url}}drivers"
+											],
+											"path": [
+												"import",
+												"drivers"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Export Drivers",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{url}}drivers/export/drivers",
+											"host": [
+												"{{url}}drivers"
+											],
+											"path": [
+												"export",
+												"drivers"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "loads",
+							"item": [
+								{
+									"name": "Loads Create",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"shipperRef\": \"ShipperRef\",\r\n    \"poHash\": \"PoHash\",\r\n    \"proCode\": \"ProCode\",\r\n    \"customer\": \"628295442ec4391e1017410c\",\r\n    \"origin\":\"628295c92ec4391e10174119\",\r\n    \"destination\":\"628295442ec4391e1017410c\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}loads/create",
+											"host": [
+												"{{url}}loads"
+											],
+											"path": [
+												"create"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Loads",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}loads?sortBy=createdAtDateTime:desc&status=assigned",
+											"host": [
+												"{{url}}loads"
+											],
+											"query": [
+												{
+													"key": "location_externalId",
+													"value": "10SERVICESCOMPANYLLC",
+													"disabled": true
+												},
+												{
+													"key": "page",
+													"value": "5",
+													"disabled": true
+												},
+												{
+													"key": "limit",
+													"value": "5",
+													"disabled": true
+												},
+												{
+													"key": "status",
+													"value": "active",
+													"disabled": true
+												},
+												{
+													"key": "sortBy",
+													"value": "createdAtDateTime:desc"
+												},
+												{
+													"key": "status",
+													"value": "assigned"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Load",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}loads/6307f2b09cbe12fb2b82adba",
+											"host": [
+												"{{url}}loads"
+											],
+											"path": [
+												"6307f2b09cbe12fb2b82adba"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Update Load",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{    \r\n\"charges\":\r\n[\r\n    {\r\n    \"billableToCustomer\": false,\r\n    \"notes\": null,\r\n    \"payableToDriver\": true,\r\n    \"quantity\": 2,\r\n    \"rate\": 250,\r\n    \"type\": \"64748c1af3891f24f9c057e4\"\r\n    }\r\n]\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}loads/646519b9f4ef590460ffbd37",
+											"host": [
+												"{{url}}loads"
+											],
+											"path": [
+												"646519b9f4ef590460ffbd37"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Load Payment",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n   \"loadAmount\": 100\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}loads/646519d1238cf440c0e5ce84/payment",
+											"host": [
+												"{{url}}loads"
+											],
+											"path": [
+												"646519d1238cf440c0e5ce84",
+												"payment"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GET Load Payment Transacations",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}loads/646519b9f4ef590460ffbd37/payment/transactions",
+											"host": [
+												"{{url}}loads"
+											],
+											"path": [
+												"646519b9f4ef590460ffbd37",
+												"payment",
+												"transactions"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete Loads",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{url}}loads/64651155d620562934e81d96",
+											"host": [
+												"{{url}}loads"
+											],
+											"path": [
+												"64651155d620562934e81d96"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Import Loads",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}loads/import/loads",
+											"host": [
+												"{{url}}loads"
+											],
+											"path": [
+												"import",
+												"loads"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Export Loads",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{url}}loads/export/loads?status=active",
+											"host": [
+												"{{url}}loads"
+											],
+											"path": [
+												"export",
+												"loads"
+											],
+											"query": [
+												{
+													"key": "status",
+													"value": "active"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Export Load Payment Transection",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}loads/646519b9f4ef590460ffbd37/payment/export",
+											"host": [
+												"{{url}}loads"
+											],
+											"path": [
+												"646519b9f4ef590460ffbd37",
+												"payment",
+												"export"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "profiles",
+							"item": [
+								{
+									"name": "Profiles Create",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"isCustomer\": true,\r\n    \"isBillTo\": true,\r\n    \"isShipper\": true,\r\n    \"isConsignee\": true,\r\n    \"isBroker\": true,\r\n    \"isForwarder\": true,\r\n    \"isTerminal\": true,\r\n    \"active\": true,\r\n    \"email\": \"customernew@customer.com\",\r\n    \"userId\": \"626a0b85be137a05b4ecc12c\",\r\n    \"password\": \"password1\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}profiles/create",
+											"host": [
+												"{{url}}profiles"
+											],
+											"path": [
+												"create"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Profiles",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}profiles?isCustomer=true&limit=2&sortBy",
+											"host": [
+												"{{url}}profiles"
+											],
+											"query": [
+												{
+													"key": "isCustomer",
+													"value": "true"
+												},
+												{
+													"key": "location_externalId",
+													"value": "10SERVICESCOMPANYLLC",
+													"disabled": true
+												},
+												{
+													"key": "page",
+													"value": "3",
+													"disabled": true
+												},
+												{
+													"key": "limit",
+													"value": "2"
+												},
+												{
+													"key": "sortBy",
+													"value": null
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Profile",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}profiles/6312bfa308b68009f5b9f5db",
+											"host": [
+												"{{url}}profiles"
+											],
+											"path": [
+												"6312bfa308b68009f5b9f5db"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Update Profile",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"isCustomer\": true,\r\n    \"isBillTo\": true,\r\n    \"isShipper\": true,\r\n    \"isConsignee\": true,\r\n    \"isBroker\": true,\r\n    \"isForwarder\": true,\r\n    \"isTerminal\": true,\r\n    \"location\": {\r\n        \"id\": \"10SERVICESCOMPANYLLC\",\r\n        \"name\": \"inland X services\",\r\n        \"address1\": \"North Verginia, Street #999, 55457\",\r\n        \"zip\": \"75850\",\r\n        \"state\": \"UK\",\r\n        \"city\": \"New York\",\r\n        \"country\": \"UNITED KINGDOM\",\r\n        \"phone\": \"(921) 872-7988\",\r\n        \"fax\": \"(922) 745-5933\",\r\n        \"externalId\": \"10SERVICESCOMPANYLLC\"\r\n    },\r\n    \"active\": true,\r\n    \"contactPersons\": [\r\n        {\r\n            \"type\": \"Accounting\",\r\n            \"name\": \"Larry Jinks\",\r\n            \"phone\": \"(921) 872-7988\",\r\n            \"fax\": \"(922) 745-5933\",\r\n            \"email\": \"username1@company.com\"\r\n        },\r\n        {\r\n            \"type\": \"Purchasing\",\r\n            \"name\": \"Allen Young\",\r\n            \"phone\": \"(921) 872-7988\",\r\n            \"fax\": \"(922) 745-5933\",\r\n            \"email\": \"username2@company.com\"\r\n        },\r\n        {\r\n            \"type\": \"Sales\",\r\n            \"name\": \"Tom Moody\",\r\n            \"phone\": \"(921) 872-7988\",\r\n            \"fax\": \"(922) 745-5933\",\r\n            \"email\": \"username3@company.com\"\r\n        },\r\n        {\r\n            \"type\": \"Transportation\",\r\n            \"name\": \"Max Smith\",\r\n            \"phone\": \"(921) 872-7988\",\r\n            \"fax\": \"(922) 745-5933\",\r\n            \"email\": \"username4@company.com\"\r\n        },\r\n        {\r\n            \"type\": \"Inland Services\",\r\n            \"name\": \"Maxy Smith\",\r\n            \"phone\": \"(921) 872-7988\",\r\n            \"fax\": \"(922) 745-5933\",\r\n            \"email\": \"username4@company.com\"\r\n        }\r\n    ],\r\n    \"email\": \"abc@abc.com\",\r\n    \"mcId\": \"MCIDZ1122\",\r\n    \"ediId\": \"EDIIDU99MN\",\r\n    \"notes\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\",\r\n    \"officeHours\": \"9:00 AM to 5:00 PM (Mon to Fri)\",\r\n    \"userId\": \"626a0b85be137a05b4ecc12c\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}profiles/625f453e8f37b229a8e5e70d",
+											"host": [
+												"{{url}}profiles"
+											],
+											"path": [
+												"625f453e8f37b229a8e5e70d"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete Profile",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{url}}profiles/6262064f8f37b229a8e5e8b9",
+											"host": [
+												"{{url}}profiles"
+											],
+											"path": [
+												"6262064f8f37b229a8e5e8b9"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Import Profile",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}profiles/import/profiles",
+											"host": [
+												"{{url}}profiles"
+											],
+											"path": [
+												"import",
+												"profiles"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Export Profile",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{url}}profiles/export/profiles?isCustomer=true",
+											"host": [
+												"{{url}}profiles"
+											],
+											"path": [
+												"export",
+												"profiles"
+											],
+											"query": [
+												{
+													"key": "isCustomer",
+													"value": "true"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "charges",
+							"item": [
+								{
+									"name": "Update Charges",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"charge 22\",\r\n    \"default_rate\":\"2\",\r\n    \"active\": false\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}charges/646511fbd620562934e81d9d",
+											"host": [
+												"{{url}}charges"
+											],
+											"path": [
+												"646511fbd620562934e81d9d"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Charge",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}charges/62bb428a6aa5c831c062839a",
+											"host": [
+												"{{url}}charges"
+											],
+											"path": [
+												"62bb428a6aa5c831c062839a"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "1",
+													"disabled": true
+												},
+												{
+													"key": "active",
+													"value": "true",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Charges",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}charges?page=1&active=true&sortBy=createdAtDateTime:desc&limit=1",
+											"host": [
+												"{{url}}charges"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "1"
+												},
+												{
+													"key": "active",
+													"value": "true"
+												},
+												{
+													"key": "sortBy",
+													"value": "createdAtDateTime:desc"
+												},
+												{
+													"key": "limit",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete Charge",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{url}}charges/646511fbd620562934e81d9d",
+											"host": [
+												"{{url}}charges"
+											],
+											"path": [
+												"646511fbd620562934e81d9d"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Create Charge",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Undeck\",\r\n    \"rate\":\"02\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}charges",
+											"host": [
+												"{{url}}charges"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "goods",
+							"item": [
+								{
+									"name": "Update Goods",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"name of good\",\r\n    \"active\": true\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}goods/62b87ef16c27cc0d9c46c081",
+											"host": [
+												"{{url}}goods"
+											],
+											"path": [
+												"62b87ef16c27cc0d9c46c081"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Good",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}goods/62b87ef16c27cc0d9c46c081",
+											"host": [
+												"{{url}}goods"
+											],
+											"path": [
+												"62b87ef16c27cc0d9c46c081"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "1",
+													"disabled": true
+												},
+												{
+													"key": "active",
+													"value": "true",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Goods",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}goods?active=true&sortBy=createdAtDateTime:desc",
+											"host": [
+												"{{url}}goods"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "1",
+													"disabled": true
+												},
+												{
+													"key": "active",
+													"value": "true"
+												},
+												{
+													"key": "sortBy",
+													"value": "createdAtDateTime:desc"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete Good",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{url}}goods/626897618dc1d622d4cbc863",
+											"host": [
+												"{{url}}goods"
+											],
+											"path": [
+												"626897618dc1d622d4cbc863"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Create Good",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"E\",\r\n    \"active\": true\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}goods",
+											"host": [
+												"{{url}}goods"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "countries",
+							"item": [
+								{
+									"name": "Create Countries",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{url}}countries",
+											"host": [
+												"{{url}}countries"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get All Countries",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}countries",
+											"host": [
+												"{{url}}countries"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get All States Of Country",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}countries/PK/states",
+											"host": [
+												"{{url}}countries"
+											],
+											"path": [
+												"PK",
+												"states"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get All Cities Of",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}countries/PK/SD/cities",
+											"host": [
+												"{{url}}countries"
+											],
+											"path": [
+												"PK",
+												"SD",
+												"cities"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "settings",
+							"item": [
+								{
+									"name": "Get Settings",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}settings",
+											"host": [
+												"{{url}}settings"
+											],
+											"query": [
+												{
+													"key": "location_externalId",
+													"value": "10SERVICESCOMPANYLLC",
+													"disabled": true
+												},
+												{
+													"key": "page",
+													"value": "5",
+													"disabled": true
+												},
+												{
+													"key": "limit",
+													"value": "5",
+													"disabled": true
+												},
+												{
+													"key": "status",
+													"value": "active",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Update Settings",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n   \"selectedHourOfDailyEmailSendToDriversWithTenderedLoads\": \"8\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}settings",
+											"host": [
+												"{{url}}settings"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					],
+					"auth": {
+						"type": "oauth2",
+						"oauth2": [
+							{
+								"key": "addTokenTo",
+								"value": "header",
+								"type": "string"
+							}
+						]
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "auth",
+					"item": [
+						{
+							"name": "Register",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const response = pm.response.json();",
+											"",
+											"// Extract values from the response",
+											"const accessToken = response?.tokens?.access?.token;",
+											"const refreshToken = response?.tokens?.refresh?.token;",
+											"",
+											"",
+											"// Set values in environment variables",
+											"pm.environment.set('access_token', accessToken);",
+											"pm.environment.set('refresh_token', refreshToken);",
+											"",
+											"// Set values in global variables",
+											"pm.globals.set('access_token', accessToken);",
+											"pm.globals.set('refresh_token', refreshToken);",
+											"",
+											"// Set values in collectionVariables",
+											"pm.collectionVariables.set('access_token', accessToken);",
+											"pm.collectionVariables.set('refresh_token', refreshToken);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"zebwebdev@gmail.com\",\r\n    \"first_name\": \"Staging Super Admin FN\",\r\n    \"last_name\": \"Staging Super Admin LN\",\r\n    \"phone\": \"923132523242\",\r\n    \"password\": \"s@dM!n12E5\",\r\n    \"birthday\": \"1999-12-14\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}auth/register",
+									"host": [
+										"{{url}}auth"
+									],
+									"path": [
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Admin Login",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const response = pm.response.json();",
+											"",
+											"// Extract values from the response",
+											"const accessToken = response?.tokens?.access?.token;",
+											"const refreshToken = response?.tokens?.refresh?.token;",
+											"",
+											"",
+											"// Set values in environment variables",
+											"pm.environment.set('access_token', accessToken);",
+											"pm.environment.set('refresh_token', refreshToken);",
+											"",
+											"// Set values in global variables",
+											"pm.globals.set('access_token', accessToken);",
+											"pm.globals.set('refresh_token', refreshToken);",
+											"",
+											"// Set values in collectionVariables",
+											"pm.collectionVariables.set('access_token', accessToken);",
+											"pm.collectionVariables.set('refresh_token', refreshToken);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"zebwebdev@gmail.com\",\r\n    \"password\": \"s@dM!n12E5\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}auth/login",
+									"host": [
+										"{{url}}auth"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Logout",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"refreshToken\": \"{{refresh_token}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}auth/logout",
+									"host": [
+										"{{url}}auth"
+									],
+									"path": [
+										"logout"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Forgot Password",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const response = pm.response.json();",
+											"",
+											"// Extract values from the response",
+											"const resetPasswordToken = response?.resetPasswordToken;",
+											"",
+											"// Set values in environment variables",
+											"pm.environment.set('resetPasswordToken', resetPasswordToken);",
+											"// Set values in global variables",
+											"pm.globals.set('resetPasswordToken', resetPasswordToken);",
+											"// Set values in collectionVariables",
+											"pm.collectionVariables.set('resetPasswordToken', resetPasswordToken);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"zebwebdev@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}auth/forgot-password",
+									"host": [
+										"{{url}}auth"
+									],
+									"path": [
+										"forgot-password"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Reset Password",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"password\": \"s@dM!n12E5\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}auth/reset-password?token={{resetPasswordToken}}",
+									"host": [
+										"{{url}}auth"
+									],
+									"path": [
+										"reset-password"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "{{resetPasswordToken}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Refresh Tokens",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"refreshToken\": \"{{refresh_token}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}auth/refresh-tokens",
+									"host": [
+										"{{url}}auth"
+									],
+									"path": [
+										"refresh-tokens"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "users",
+					"item": [
+						{
+							"name": "Get User",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}users-management/6578dd1e79b5f413d2e1baf0",
+									"host": [
+										"{{url}}users-management"
+									],
+									"path": [
+										"6578dd1e79b5f413d2e1baf0"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update User",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"zebwebdev+5@gmail.com\",\n    \"first_name\": \"Staging Super Admin FN\",\n    \"last_name\": \"Staging Super Admin LN\",\n    \"phone\": \"923132523242\",\n    \"password\": \"s@dM!n12E5\",\n    \"birthday\": \"1999-12-14\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}users-management/6578dd1e79b5f413d2e1baf0",
+									"host": [
+										"{{url}}users-management"
+									],
+									"path": [
+										"6578dd1e79b5f413d2e1baf0"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Users",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}users-management?page=1",
+									"host": [
+										"{{url}}users-management"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete User",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}users-management/6578e3eac4db6814af6f0b92",
+									"host": [
+										"{{url}}users-management"
+									],
+									"path": [
+										"6578e3eac4db6814af6f0b92"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create User",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"zebwebdev+1@gmail.com\",\r\n    \"first_name\": \"Staging Super Admin FN\",\r\n    \"last_name\": \"Staging Super Admin LN\",\r\n    \"phone\": \"923132523242\",\r\n    \"password\": \"s@dM!n12E5\",\r\n    \"birthday\": \"1999-12-14\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}users-management",
+									"host": [
+										"{{url}}users-management"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"// const response = pm.response.json();",
+							"",
+							"// // Extract values from the response",
+							"// const accessToken = response?.tokens?.access?.token;",
+							"// const refreshToken = response?.tokens?.refresh?.token;",
+							"",
+							"",
+							"// // Set values in environment variables",
+							"// pm.environment.set('access_token', accessToken);",
+							"// pm.environment.set('refresh_token', refreshToken);",
+							"",
+							"// // Set values in global variables",
+							"// pm.globals.set('access_token', accessToken);",
+							"// pm.globals.set('refresh_token', refreshToken);"
+						]
+					}
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{access_token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"// const response = pm.response.json();",
+					"",
+					"// // Extract values from the response",
+					"// const accessToken = response?.tokens?.access?.token;",
+					"// const refreshToken = response?.tokens?.refresh?.token;",
+					"",
+					"",
+					"// // Set values in environment variables",
+					"// pm.environment.set('access_token', accessToken);",
+					"// pm.environment.set('refresh_token', refreshToken);",
+					"",
+					"// // Set values in global variables",
+					"// pm.globals.set('access_token', accessToken);",
+					"// pm.globals.set('refresh_token', refreshToken);"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "access_token",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "refresh_token",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "resetPasswordToken",
+			"value": ""
+		},
+		{
+			"key": "verifyEmailToken",
+			"value": ""
+		}
+	]
+}
