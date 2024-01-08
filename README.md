@@ -4,7 +4,20 @@
 please create a .env file and add following key
 
 ```
-JWT_SECRET=randomstringidswillbeusedtoencryptdecrypt
+NODE_ENV=development
+PORT=3000
+MONGODB_URL=mongodb://127.0.0.1:27017/crystalsystems
+JWT_SECRET=thisisasamplesecret
+JWT_ACCESS_EXPIRATION_MINUTES=1
+JWT_REFRESH_EXPIRATION_DAYS=1
+JWT_RESET_PASSWORD_EXPIRATION_MINUTES=1
+JWT_VERIFY_EMAIL_EXPIRATION_MINUTES=1
+# For testing, you can use a fake SMTP service like Ethereal: https://ethereal.email/create
+SMTP_HOST=smtp.ethereal.email
+SMTP_PORT=587
+SMTP_USERNAME=eileen.wuckert25@ethereal.email
+SMTP_PASSWORD=ew4UjT422FppfJAq82
+EMAIL_FROM=support@crystal-system.eu
 ```
 
 ### DOCKER COMMANDS

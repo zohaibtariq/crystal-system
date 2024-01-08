@@ -1327,6 +1327,34 @@
 						},
 						{
 							"name": "Refresh Tokens",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const response = pm.response.json();",
+											"",
+											"// Extract values from the response",
+											"const accessToken = response?.access?.token;",
+											"const refreshToken = response?.refresh?.token;",
+											"",
+											"",
+											"// Set values in environment variables",
+											"pm.environment.set('access_token', accessToken);",
+											"pm.environment.set('refresh_token', refreshToken);",
+											"",
+											"// Set values in global variables",
+											"pm.globals.set('access_token', accessToken);",
+											"pm.globals.set('refresh_token', refreshToken);",
+											"",
+											"// Set values in collectionVariables",
+											"pm.collectionVariables.set('access_token', accessToken);",
+											"pm.collectionVariables.set('refresh_token', refreshToken);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"request": {
 								"method": "POST",
 								"header": [],
@@ -1357,17 +1385,64 @@
 					"name": "users",
 					"item": [
 						{
+							"name": "Create User",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"zebwebdev+9@gmail.com\",\r\n    \"first_name\": \"Staging Super Admin FN\",\r\n    \"last_name\": \"Staging Super Admin LN\",\r\n    \"phone\": \"923132523242\",\r\n    \"password\": \"s@dM!n12E5\",\r\n    \"birthday\": \"1999-12-14\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}users-management",
+									"host": [
+										"{{url}}users-management"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Users",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}users-management?page=2&limit=3",
+									"host": [
+										"{{url}}users-management"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "2"
+										},
+										{
+											"key": "limit",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "Get User",
 							"request": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}users-management/6578dd1e79b5f413d2e1baf0",
+									"raw": "{{url}}users-management/659ba5fd978ec900760d779c",
 									"host": [
 										"{{url}}users-management"
 									],
 									"path": [
-										"6578dd1e79b5f413d2e1baf0"
+										"659ba5fd978ec900760d779c"
 									]
 								}
 							},
@@ -1388,32 +1463,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}users-management/6578dd1e79b5f413d2e1baf0",
+									"raw": "{{url}}users-management/6578f7738d987d01148e5b1d",
 									"host": [
 										"{{url}}users-management"
 									],
 									"path": [
-										"6578dd1e79b5f413d2e1baf0"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Get Users",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{url}}users-management?page=1",
-									"host": [
-										"{{url}}users-management"
-									],
-									"query": [
-										{
-											"key": "page",
-											"value": "1"
-										}
+										"6578f7738d987d01148e5b1d"
 									]
 								}
 							},
@@ -1425,35 +1480,12 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{url}}users-management/6578e3eac4db6814af6f0b92",
+									"raw": "{{url}}users-management/6578f7738d987d01148e5b1d",
 									"host": [
 										"{{url}}users-management"
 									],
 									"path": [
-										"6578e3eac4db6814af6f0b92"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Create User",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"email\": \"zebwebdev+1@gmail.com\",\r\n    \"first_name\": \"Staging Super Admin FN\",\r\n    \"last_name\": \"Staging Super Admin LN\",\r\n    \"phone\": \"923132523242\",\r\n    \"password\": \"s@dM!n12E5\",\r\n    \"birthday\": \"1999-12-14\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{url}}users-management",
-									"host": [
-										"{{url}}users-management"
+										"6578f7738d987d01148e5b1d"
 									]
 								}
 							},
