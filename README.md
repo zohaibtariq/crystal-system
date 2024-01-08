@@ -1,5 +1,12 @@
 # Crystal System API
 
+### .env
+please create a .env file and add following key
+
+```
+JWT_SECRET=randomstringidswillbeusedtoencryptdecrypt
+```
+
 ### DOCKER COMMANDS
 
 #### to build docker container
